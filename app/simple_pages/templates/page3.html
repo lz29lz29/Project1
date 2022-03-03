@@ -1,4 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 3
+
+    <div class="row">
+<div class="text-warning">
+    <p>
+        Flask:Flask is a web framework, it’s a Python module that lets you develop web applications easily. It’s has a
+        small and easy-to-extend core: it’s a microframework that does not include an ORM (Object Relational Manager) or
+        such features.The Web Server Gateway Interface (Web Server Gateway Interface, WSGI) has been used as a standard
+        for Python web application development. WSGI is the specification of a common interface between web servers and
+        web applications.Werkzeug is a WSGI toolkit that implements requests, response objects, and utility functions.
+        This enables a web frame to be built on it. The Flask framework uses Werkzeg as one of its bases.
+    </p>
+    <p>
+        Flask Blueprint:Flask uses a concept of blueprints for making application components and supporting common
+        patterns within an application or across applications. Blueprints can greatly simplify how large applications
+        work and provide a central means for Flask extensions to register operations on applications. A Blueprint object
+        works similarly to a Flask application object, but it is not actually an application. Rather it is a blueprint
+        of how to construct or extend an application.Blueprints instead provide separation at the Flask level, share
+        application config, and can change an application object as necessary with being registered. The downside is
+        that you cannot unregister a blueprint once an application was created without having to destroy the whole
+        application object.
+    </p>
+    <p>
+        Flask Testing:Flask provides a way to test your application by exposing the Werkzeug test Client and handling
+        the context locals for you. You can then use that with your favourite testing solution.Now, just take the assert
+        to the data int the page, to make sure the characters in the data.
+    </p>
+
+
+</div>
+
+    <div class="row">
+        <ul>
+            <li>Project Root Folder <-Root of the project
+                <ul>
+                    <li>docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it
+                        overrides the Dockerfile to run the flask development server instead of running the gunicorn
+                        server that is used for hosting on Heroku
+                    </li>
+                    <li>Dockerfile <-File used to create an image to run in a container that runs the program</li>
+                    <li>heroku.yml <-to set the heroku running time</li>
+                    <li>pytest.ini <- to get the pytest package</li>
+                    <li>dev.yml <- to set the develop environment to the github action</li>
+                    <li>pro.yml <- to set the production environment to the github action</li>
+                    <li>_init-.py <- to use the blueprint to view the webpage</li>
+                    <li>base.html <- to design the base template to the webpage</li>
+                    <li>simple_pages_test.py <- to test every simple page in the app</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
 {% endblock %}

@@ -1,4 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 2
+
+
+    <div class="row">
+<div class="text-warning">
+    <p>
+        Docker Image:A Docker image is a read-only template that contains a set of instructions for creating a container
+        that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured
+        server environments, which you can use for your own private use or share publicly with other Docker users.
+        Docker images are also the starting point for anyone using Docker for the first time.A Docker image is made up
+        of a collection of files that bundle together all the essentials – such as installations, application code, and
+        dependencies – required to configure a fully operational container environment.
+    </p>
+    <p>
+        Docker containers:Think of a container as another form of virtualization. VMs, also just one form of
+        virtualization, allow a piece of hardware to host multiple operating systems as software. VMs are added to the
+        host machine so that the hardware power can be shared among different users and appear as separate servers or
+        machines. Containers virtualize the OS, splitting it into virtualized compartments to run container
+        applications.The Docker daemon is what is responsible for actually does the assembling and running of code as
+        well as the distribution of the finalized containers. It takes the commands a developer enters into the Docker
+        client terminal and executes them.This approach allows pieces of code to be put into smaller, easily
+        transportable pieces that can run anywhere Linux or Windows is running. It’s a way to make applications even
+        more distributed, and strip them down into specific functions.
+    </p>
+    <p>
+        Docker Hub Using:Docker Hub repositories allow you share container images with your team, customers, or the
+        Docker community at large. Docker images are pushed to Docker Hub through the docker push command. A single
+        Docker Hub repository can hold many Docker images (stored as tags).To push an image to Docker Hub, you must
+        first name your local image using your Docker Hub username and the repository name that you created through Docker Hub on the web.You can add
+        multiple images to a repository by adding a specific :tag to them (for example docs/base:testing). If it’s not
+        specified, the tag defaults to latest.The image is then uploaded and available for use by your teammates and/or the community.
+
+
+
+
+    </p>
+    <p>
+        Docker commands:docker build->Build an image from a Dockerfile.docker commit->Create a new image from a
+        container’s changes.docker create->Create a new container.
+        docker image->Manage images.docker ps->List containers.docker push->Push an image or a repository to a
+        registry.docker run->Run a command in a new container.
+        docker version->Show the Docker version information.
+    </p>
+    <p>
+        Using Docker in Project:If we want to connect to an existing container, we should have any container in running
+        status. For that, we must check the container status in our system with the docker ps command.Once the container
+        is started, we'll see it from another call to docker ps.docker exec tells Docker that we want to execute a
+        command into a running container.The -it argument means that it will be executed in an interactive mode – it
+        keeps the STIN open.
+
+
+    </p>
+</div>
+
+
+</div>
+
 {% endblock %}

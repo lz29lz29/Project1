@@ -1,4 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 4
+
+    <div class="row">
+<div class="text-warning">
+    <p>
+        Continuous Integration:Continuous integration (CI) is the practice of automating the integration of code changes
+        from multiple contributors into a single software project. It’s a primary DevOps best practice, allowing
+        developers to frequently merge code changes into a central repository where builds and tests then run. Automated
+        tools are used to assert the new code’s correctness before integration.CI helps to scale up headcount and
+        delivery output of engineering teams. Introducing CI to the aforementioned scenario allows software developers
+        to work independently on features in parallel. When they are ready to merge these features into the end product,
+        they can do so independently and rapidly. CI is a valuable and well-established practice in modern, high
+        performance software engineering organizations.
+    </p>
+    <p>
+        Continuous Deployment:Continuous Deployment (CD) is a software release process that uses automated testing to
+        validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production
+        environment.The software release cycle has evolved over time. The legacy process of moving code from one machine
+        to another and checking if it works as expected used to be an error prone and resource-heavy process. Now, tools
+        can automate this entire deployment process, which allow engineering organizations to focus on core business
+        needs instead of infrastructure overhead.
+    </p>
+    <p>
+        Github Action Work:In the CI/CD Pipeline, GitHub Actions is the entity that automates the boring stuff. Think of
+        it as some plugin that comes bundled with every GitHub repository you create.The plugin exists on your repo to
+        execute whatever task you tell it to. Usually, you'd specify what tasks the plugin should execute through a YAML
+        configuration file.At the core of GitHub Actions lies five concepts: jobs, workflows, events, actions, and
+        runners.Jobs are the tasks you command GitHub Actions to execute through the YAML config file. A job could be
+        something like telling GitHub actions to build your source code, run tests, or deploy the code that has been
+        built to some remote server.Workflows are essentially automated processes that contain one or more logically
+        related jobs. For example, you could put the build and run tests jobs into the same workflow, and the deployment
+        job into a different workflow.Events are literally the events that trigger the execution of a job by GitHub
+        Actions. Recall we mentioned passing jobs to be executed through a config file? In that config file you'd also
+        have to specify when a job should be executed.Actions are the reusable commands that you can reuse in your
+        config file. You can write your custom actions or use existing ones.A runner is the remote computer that GitHub
+        Actions uses to execute the jobs you tell it to.For example, when the build-and-test job is triggered based on
+        some event, GitHub Actions will pull your code to that computer and execute the job. For example, when the
+        build-and-test job is triggered based on some event, GitHub Actions will pull your code to that computer and
+        execute the job.
+    </p>
+
+
+</div>
+
+
+</div>
+
+
+
+
 {% endblock %}

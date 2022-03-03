@@ -1,4 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
+
+    <div class="row">
+<div class="text-warning">
+    <p>
+        Git Branches:Branch in Git is similar to the branch of a tree. Analogically, a tree branch is attached to the
+        central part of the tree called the trunk. While branches can generate and fall off, the trunk remains compact
+        and is the only part by which we can say the tree is alive and standing. Similarly, a branch in Git is a way to
+        keep developing and coding a new feature or modification to the software and still not affecting the main part
+        of the project. We can also say that branches create another line of development in the project. The primary or
+        default branch in Git is the master branch. As soon as the repository creates, so does the main branch.Git
+        branches come to the rescue at many different places during the development of a project. As mentioned above,
+        branches create another line of development that is entirely different or isolated from the main stable master
+        branch. There are many advantages to doing so. Consider that you are developing a project with your team, and
+        you finish a feature. You contact the client to request them to see the feature, but they are too busy, so you
+        send them the link to have a look at the project.
+    </p>
+    <p>
+        Git Merge:Merging is a common practice for developers using version control systems. Whether branches are
+        created for testing, bug fixes, or other reasons, merging commits changes to another location. To be more
+        specific, merging takes the contents of a source branch and integrates them with a target branch. In this
+        process, only the target branch is changed. The source branch history remains the same.
+    </p>
+    <p>
+        Git Commit:The git commit command will save all staged changes, along with a brief description from the user, in
+        a “commit” to the local repository.Commits are at the heart of Git usage. You can think of a commit as a
+        snapshot of your project, where a new version of that project is created in the current repository. Two
+        important features of commits are: you can recall the commited changes at a later date, or revert the project to
+        that version.If multiple commits edit different parts of the project, they will not overwrite each other even if
+        the authors of the commit were unaware of each other. This is one of the benefits of using Git over a tool like
+        Dropbox or Google Drive.
+    </p>
+    <p>
+        Git Tags:You can create two type of tags: annotated and lightweight. They first ones are compete objects in GIT
+        database: they are checksummed, require a message (like commits) and store other important data such as name,
+        email and date. On the other hand, lightweight tags don require a mesage or store other data, working just as a
+        pointer to a specific point in the project.Lightweight tags contain only the commit checksum (no other
+        information is stored). To create one, just run the git tag command without any other options.
+    </p>
+    <p>
+        Git Repositories:Repositories in GIT contain a collection of files of various different versions of a Project.
+        These files are imported from the repository into the local server of the user for further updations and
+        modifications in the content of the file. A VCS or the Version Control System is used to create these versions
+        and store them in a specific place termed as a repository. The process of copying the content from an existing
+        Git Repository with the help of various Git Tools is termed as cloning. Once the cloning process is done, the
+        user gets the complete repository on his local machine. Git by default assumes the work to be done on the
+        repository is as a user, once the cloning is done.Users can also create a new repository or delete an existing
+        repository. To delete a repository, the simpler way is to just delete the folder containing the repository.
+    </p>
+</div>
+
+
+</div>
+
 {% endblock %}
