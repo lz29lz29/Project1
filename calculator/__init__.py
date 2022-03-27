@@ -1,20 +1,39 @@
-""" This is the Calculator Class"""
+"""
+docstring: a moduLe for Calculator
+"""
 
 
 class Calculator:
-    """ This is the default result property"""
-    result = 0
+    """
+    docstring: a Calculator class
+    """
 
-    def add(self, value_1):
-        """ This is the add method"""
-        self.result = self.result + value_1
-        return self.result
-
-    def subtract(self, value_1):
-        """ This is the subtract method"""
-        self.result = self.result - value_1
-        return self.result
+    def __init__(self, num1, sign, num2):
+        self.num1 = num1
+        self.sign = sign
+        self.num2 = num2
 
     def get_result(self):
-        """ This is the get result method"""
-        return self.result
+        """
+               docstring: get the result of the calculator
+        """
+        if self.sign == '+':
+            result = self.num1 + self.num2
+        elif self.sign == '-':
+            result = self.num1 - self.num2
+        elif self.sign == '*':
+            result = self.num1 * self.num2
+        elif self.sign == '/':
+            try:
+                result = self.num1 / self.num2
+            except ZeroDivisionError:
+                print("zero cannot to be the division")
+        else:
+            print("Input the wrong operator！")
+        return result
+
+    def get_sign(self):
+        """
+               docstring:get the operator
+        """
+        return self.sign
