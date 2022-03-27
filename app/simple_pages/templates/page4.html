@@ -3,42 +3,62 @@
 
     <div class="row">
 <div class="text-warning">
-    <p>
-        Continuous Integration:Continuous integration (CI) is the practice of automating the integration of code changes
-        from multiple contributors into a single software project. It’s a primary DevOps best practice, allowing
-        developers to frequently merge code changes into a central repository where builds and tests then run. Automated
-        tools are used to assert the new code’s correctness before integration.CI helps to scale up headcount and
-        delivery output of engineering teams. Introducing CI to the aforementioned scenario allows software developers
-        to work independently on features in parallel. When they are ready to merge these features into the end product,
-        they can do so independently and rapidly. CI is a valuable and well-established practice in modern, high
-        performance software engineering organizations.
+    <p class="col-md-12">
+        The Single Responsibility Principle: The Single Responsibility Principle states that a class should do one thing and therefore it should have only a
+        single reason to change. To state this principle more technically: Only one potential change (database logic, logging logic, and so on.)
+        in the software’s specification should be able to affect the specification of the class.
+        This means that if a class is a data container, like a Book class or a Student class, and it has some fields
+        regarding that entity, it should change only when we change the data model.
+        Following the Single Responsibility Principle is important. First of all, because many different teams can work
+        on the same project and edit the same class for different reasons, this could lead to incompatible modules.
+        Second, it makes version control easier. For example, say we have a persistence class that handles database
+        operations, and we see a change in that file in the GitHub commits. By following the SRP, we will know that it
+        is related to storage or database-related stuff.
+        Merge conflicts are another example. They appear when different teams change the same file. But if the SRP is
+        followed, fewer conflicts will appear – files will have a single reason to change, and conflicts that do exist
+        will be easier to resolve.
     </p>
-    <p>
-        Continuous Deployment:Continuous Deployment (CD) is a software release process that uses automated testing to
-        validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production
-        environment.The software release cycle has evolved over time. The legacy process of moving code from one machine
-        to another and checking if it works as expected used to be an error prone and resource-heavy process. Now, tools
-        can automate this entire deployment process, which allow engineering organizations to focus on core business
-        needs instead of infrastructure overhead.
+    <p class="col-md-10">
+        Open-Closed Principle:The Open-Closed Principle requires that classes should be open for extension and closed to modification.
+        Modification means changing the code of an existing class, and extension means adding new functionality.
+        So what this principle wants to say is: We should be able to add new functionality without touching the existing
+        code for the class. This is because whenever we modify the existing code, we are taking the risk of creating
+        potential bugs. So we should avoid touching the tested and reliable (mostly) production code if possible.
+        But how are we going to add new functionality without touching the class, you may ask. It is usually done with
+        the help of interfaces and abstract classes. Now that we have covered the basics of the principle, let's apply it to our Invoice application.
+        Let's say our boss came to us and said that they want invoices to be saved to a database so that we can search
+        them easily.
     </p>
-    <p>
-        Github Action Work:In the CI/CD Pipeline, GitHub Actions is the entity that automates the boring stuff. Think of
-        it as some plugin that comes bundled with every GitHub repository you create.The plugin exists on your repo to
-        execute whatever task you tell it to. Usually, you'd specify what tasks the plugin should execute through a YAML
-        configuration file.At the core of GitHub Actions lies five concepts: jobs, workflows, events, actions, and
-        runners.Jobs are the tasks you command GitHub Actions to execute through the YAML config file. A job could be
-        something like telling GitHub actions to build your source code, run tests, or deploy the code that has been
-        built to some remote server.Workflows are essentially automated processes that contain one or more logically
-        related jobs. For example, you could put the build and run tests jobs into the same workflow, and the deployment
-        job into a different workflow.Events are literally the events that trigger the execution of a job by GitHub
-        Actions. Recall we mentioned passing jobs to be executed through a config file? In that config file you'd also
-        have to specify when a job should be executed.Actions are the reusable commands that you can reuse in your
-        config file. You can write your custom actions or use existing ones.A runner is the remote computer that GitHub
-        Actions uses to execute the jobs you tell it to.For example, when the build-and-test job is triggered based on
-        some event, GitHub Actions will pull your code to that computer and execute the job. For example, when the
-        build-and-test job is triggered based on some event, GitHub Actions will pull your code to that computer and
-        execute the job.There are five important pieces of information we need to complete this step: application name,
-        environment name, access key id, secret access key, and the server region.
+    <p class="col-md-8">
+        Liskov Substitution Principle: The Liskov Substitution Principle states that subclasses should be substitutable for their base classes.
+        This means that, given that class B is a subclass of class A, we should be able to pass an object of class B to
+        any method that expects an object of class A and the method should not give any weird output in that case.
+        This is the expected behavior, because when we use inheritance we assume that the child class inherits
+        everything that the superclass has. The child class extends the behavior but never narrows it down.
+        Therefore, when a class does not obey this principle, it leads to some nasty bugs that are hard to detect.
+        Liskov's principle is easy to understand but hard to detect in code.
+
+
+    </p>
+
+    <p class="col-md-8">
+
+        Interface Segregation Principle: Segregation means keeping things separated, and the Interface Segregation Principle is about separating the
+        interfaces.The principle states that many client-specific interfaces are better than one general-purpose interface. Clients
+        should not be forced to implement a function they do no need.
+
+
+    </p>
+
+    <p class="col-md-8">
+
+        Dependency Inversion Principle: The Dependency Inversion principle states that our classes should depend upon interfaces or abstract classes
+        instead of concrete classes and functions. In his article (2000), Uncle Bob summarizes this principle as follows:
+        "If the OCP states the goal of OO architecture, the DIP states the primary mechanism".
+        These two principles are indeed related and we have applied this pattern before while we were discussing the
+        Open-Closed Principle.We want our classes to be open to extension, so we have reorganized our dependencies to depend on interfaces
+        instead of concrete classes. Our PersistenceManager class depends on InvoicePersistence instead of the classes
+        that implement that interface.
     </p>
 
 

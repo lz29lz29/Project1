@@ -1,48 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
 
-
     <div class="row">
 <div class="text-warning">
-    <p>
-        Docker Image:A Docker image is a read-only template that contains a set of instructions for creating a container
-        that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured
-        server environments, which you can use for your own private use or share publicly with other Docker users.
-        Docker images are also the starting point for anyone using Docker for the first time.A Docker image is made up
-        of a collection of files that bundle together all the essentials – such as installations, application code, and
-        dependencies – required to configure a fully operational container environment.
+    <p class="col-md-12">
+        AAA Testing: The “Arrange-Act-Assert” (also AAA and 3A) pattern of testing was observed and named by Bill Wake in 2001. I
+        first came across it in Kent Beck’s book “Test Driven Development: By Example” and I spoke about it at PyConUK
+        2016. The pattern focuses each test on a single action. The advantage of this focus is that it clearly separates the
+        arrangement of the System Under Test (SUT) and the assertions that are made on it after the action.
+        On multiple projects I’ve worked on I’ve experienced organised and “clean” code in the main codebase, but
+        disorganisation and inconsistency in the test suite. However when AAA is applied, I’ve found it helps by
+        unifying and clarifying the structure of tests which helps make the test suite much more understandable and
+        manageable.
     </p>
-    <p>
-        Docker containers:Think of a container as another form of virtualization. VMs, also just one form of
-        virtualization, allow a piece of hardware to host multiple operating systems as software. VMs are added to the
-        host machine so that the hardware power can be shared among different users and appear as separate servers or
-        machines. Containers virtualize the OS, splitting it into virtualized compartments to run container
-        applications.The Docker daemon is what is responsible for actually does the assembling and running of code as
-        well as the distribution of the finalized containers. It takes the commands a developer enters into the Docker
-        client terminal and executes them.This approach allows pieces of code to be put into smaller, easily
-        transportable pieces that can run anywhere Linux or Windows is running. It’s a way to make applications even
-        more distributed, and strip them down into specific functions.
+    <p class="col-md-8">
+        AAA Meaning: Arrange inputs and targets. Arrange steps should set up the test case. Does the test require any objects or
+        special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these
+        operations at the start of the test.
+        Act on the target behavior. Act steps should cover the main thing to be tested. This could be calling a function
+        or method, calling a REST API, or interacting with a web page. Keep actions focused on the target behavior.
+        Assert expected outcomes. Act steps should elicit some sort of response. Assert steps verify the goodness or
+        badness of that response. Sometimes, assertions are as simple as checking numeric or string values. Other times,
+        they may require checking multiple facets of a system. Assertions will ultimately determine if the test passes
+        or fails.
     </p>
-    <p>
-        Docker Hub Using:Docker Hub repositories allow you share container images with your team, customers, or the
-        Docker community at large. Docker images are pushed to Docker Hub through the docker push command. A single
-        Docker Hub repository can hold many Docker images (stored as tags).To push an image to Docker Hub, you must
-        first name your local image using your Docker Hub username and the repository name that you created through Docker Hub on the web.You can add
-        multiple images to a repository by adding a specific :tag to them (for example docs/base:testing). If it’s not
-        specified, the tag defaults to latest.The image is then uploaded and available for use by your teammates and/or the community.
-
-
+    <p class="col-md-8">
+       The AAA Feature:The AAA (Arrange-Act-Assert) pattern has become almost a standard across the industry. It suggests that you
+        should divide your test method into three sections: arrange, act and assert. Each one of them only responsible
+        for the part in which they are named after.
+        So the arrange section you only have code required to setup that specific test. Here objects would be created,
+        mocks setup (if you are using one) and potentially expectations would be set. Then there is the Act, which
+        should be the invocation of the method being tested. And on Assert you would simply check whether the
+        expectations were met.
 
 
     </p>
-    <p>
+    <!--
+     <p class="col-md-8">
         Docker commands:docker build->Build an image from a Dockerfile.docker commit->Create a new image from a
         container’s changes.docker create->Create a new container.
         docker image->Manage images.docker ps->List containers.docker push->Push an image or a repository to a
         registry.docker run->Run a command in a new container.
         docker version->Show the Docker version information.
     </p>
-    <p>
+    <p class="col-md-7">
         Using Docker in Project:If we want to connect to an existing container, we should have any container in running
         status. For that, we must check the container status in our system with the docker ps command.Once the container
         is started, we'll see it from another call to docker ps.docker exec tells Docker that we want to execute a
@@ -51,6 +52,7 @@
 
 
     </p>
+    -->
 </div>
 
 
